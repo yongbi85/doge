@@ -6,6 +6,7 @@ Doge
 - See what's installed on your Switch
 - Showcase your collection
 - Heavily uses Nut (https://github.com/blawar/nut)
+- Copy from https://github.com/wowsuchdoge/doge v2.1.5 but with nsz scan enable in doge
 
 # Setup
 - Install Python 3 and Nut's dependencies
@@ -20,11 +21,12 @@ Doge
 - Visit the url you see in your web browser
 
 # Docker
-- Unofficial Docker image is available at https://github.com/krptg0/doge
+- Unofficial Docker image is available at https://github.com/krptg0/doge (my own docker is coming very soon, with git enable inside the docker to keep nut up to date)
 - Contact krptg over Github for assistance, or open an issue directly on his repo
 
 # Credits
 - Doge
+- wowsuchdoge
 - Thanks to blawar, morrison22, krptg, Bob, DBZTrunks, and more!
 
 # How To
@@ -47,86 +49,3 @@ Doge
 - Auto Unlocking just runs `nut.py --unlock-all`, so if it's not working, run that yourself from the command line and check for errors
   - You will need a populated `keys.txt`, which is not included
   - Make sure you set where you want files to go in nut.conf's "paths", by default they will be moved into sub-folders)
-
-# Changelog
-## v2.1.5 [Doge]
-- Auto-updating versions.txt from Nut TitleDB, also (so now version info comes from Bob's and Nut's DBs)
-- Only downloading Nut TitleDB files when there was a new commit
-- Added NUT_TITLEDB_LANG_FILTER option to only download language+region files that include a string you set (leave it blank to get them all)
-  So if you only want to to update US titles, set NUT_TITLEDB_LANG_FILTER to "US".
-- Updated nut to ad853c8ba773f2814317c570321b4e4ee6683393 (before scrape feature was removed)
-
-## v2.1.4 [Doge]
-- Added filter option: "Don't Have"
-- Export only missing games
-- Considering games with everything there, but DLC only preloaded as 'dlc-missing' instead of 'current' now
-
-## v2.1.3 [Doge]
-- Support for auto-updating from Nut's TitleDb! All the region+language files in nut/titledb + languages.json get auto-updated now. Nut itself is not auto-updated to avoid compatibility issues. (go update your doge.config.json from the default!)
-- Export currently shown games list as .txt (from dropdown menu top-right)
-- Game Details screen shows Publisher
-- Game Details has loading text when it's loading
-- Search finds games by Publisher now, too
-- Updated nut
-- Note: Nut server has new python dependency, so follow Setup section again if upgrading
-
-## v2.1.2 [Doge]
-- No longer showing games with future release dates in missing.txt/keyless.txt
-- Fixed new games/dlc without a key getting tagged as "Key Changed"
-- Fixed &s in game names breaking notifications
-- Updated Nut
-
-## v2.1.1 [Doge]
-- Support for Bob's VersionDB, now part of doge.conf.default.json (go update your doge.config.json!)
-- Only Admin users can set games as Wanted (you have to re-login to be seen as an Admin!)
-- Blacklist.txt support is back (read only, just add title IDs to the file in the nut folder)
-- /api/keyless.txt export
-- Fixed bug where game details wouldn't popup if you navigated directly to History page
-- Updated Nut
-
-## v2.1.0 [Doge]
-- Full game details screen
-- Like/Dislike games, per user
-- Sort games by when you liked them, and by most liked (on your server, across users)
-- Disabling Show Keyless hides keyless DLC now, too
-- If you have no keys in the DBs, key-related options don't show
-- Config to auto-run nut's --unlock-all
-- History for files shows game ID now if that's all that was known
-- Fixed games with no update in titles.json but an update in the local library not showing any ver in column
-- Optional Size column
-- Notification message now breaks down found items by type
-- Updated Nut
-
-## v2.0.2 [Doge]
-- Updated Nut
-
-## v2.0.1 [Doge]
-- New Filter: Required Languages
-- New Column: Languages count (hover to see which ones)
-- UI touch ups
-
-## v2.0.0 [Doge]
-- Showcase Mode: Goes through your games library automatically, showcasing one at a time
-- Installed: Now shows status as DLC-Needed for installed games that are missing DLC
-- History: can now filter types; button to trim history to latest entry per type
-- No longer auto marking games with only updates/dlc as wanted (only those with base game)
-- Fixed Google search being broken by game names with & etc
-
-## v2.0.0 PRE3 [Doge]
-- Ability to filter to no/only demos
-- Can un/want games by clicking the Library column
-- See what's missing in missing.txt at /api/missing.txt
-- OS X: Fixed Games folder not finding anything if path ended with slash
-- Fixed white area at button of page [Shadowhand]
-- Config format change: USERS/PASSWORD is now also all caps
-
-## v2.0.0 PRE2 [Doge]
-- Multi Switch Support (need latest DZ/Tinfoil)
-- Switch aliases: show what you want in the dropdown (see SWITCH_ALIASES in Doge conf)
-- Updated Nut; Fixes every Switch reporting as placeholder serial; delete your nut/switch/XAJ70002712345 folder, if you have it
-- Region filtering
-- History shows if a key was removed (used to show as Changed)
-- Fixed error when no Notification URL Set
-
-## v2.0.0 PRE1 [Doge]
-- Doge Server runs in parallel to nut server to bring you the Doge WebUI. Look at your collection from any web browser in your home!
